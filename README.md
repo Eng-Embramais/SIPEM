@@ -4,8 +4,8 @@ APRESENTAÇÃO TELA PRINCIPAL
 1- Painel principal onde se encontram as principais informações para geração dos arquivos.
 2-  Botão para alternar entre as versões de template disponíveis: AMARELO (PADRÃO) e BRANCO. Importante ressaltar que a versão do template refere-se à cor de fundo do sistema, e não à cor do botão. Por exemplo, se o fundo estiver na cor amarela, isso indica que a versão selecionada é a amarela. Assim, ao baixar identificadores, seja individualmente ou em lotes, eles serão gerados com a versão amarela do template. Por outro lado, se o fundo estiver branco, a versão de template selecionada será a branca.
 3- Mais informações sobre o sistema, como: capacidade, versão, direitos, suporte e etc…
-4- Primeira forma de gerar um identificador. Nesta forma, você só irá gerar um identificador, tendo que colocar apenas o ID (16 CARACTERES) e o nome do produto (LIMITADO A 150 CARACTERES)
-5-Gerador em massa via ARQUIVO EXCEL disponibilizado pela plataforma auvo. O sistema pega o nome do equipamento na primeira coluna (LIMITADO A 150 CARACTERES) e o ID na terceira coluna (16 CARACTERES)
+4- Primeira forma de gerar um identificador. Nesta forma, você só irá gerar um identificador, tendo que colocar apenas o ID (24 CARACTERES) e o nome do produto (LIMITADO A 150 CARACTERES)
+5-Gerador em massa via ARQUIVO EXCEL disponibilizado pela plataforma auvo. O sistema pega o nome do equipamento na primeira coluna (LIMITADO A 150 CARACTERES) e o ID na terceira coluna (24 CARACTERES)
 ![print 1](https://github.com/Erickhrs/SIPEM/assets/106276135/6e13a9ec-3d3d-4cb4-9933-7bba017da07f)
 
 
@@ -24,7 +24,7 @@ Após a inclusão de valores seguindo as regras estabelecidas, o resultado apare
 
 
 GERAÇÃO EM MASSA
-1-O ID tem que ser APENAS NÚMEROS  e com obrigatoriamente 16 caracteres. Qualquer coisa fora disso, resultará em erros.
+1-O ID tem que ser APENAS NÚMEROS  e com obrigatoriamente 24 caracteres. Qualquer coisa fora disso, resultará em erros.
 2-Evite colocar nomes de produtos muito grandes no template, a quebra de linha automática pode deixar um pouco estranho dependendo onde for cortado o texto. mas temos um limite de 150 caracteres. (mas recomendável menos).  Qualquer coisa fora disso, resultará em erros.
 3- recomendável 60-70 produtos em cada arquivo excel para geração em massa.
 4-recomendável conferir os resultados gerados.

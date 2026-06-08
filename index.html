@@ -78,7 +78,7 @@
         <div class="card">
             <div id="infosCard" style="border: 1px solid beige;background-color: aliceblue;border-radius: 20px;">
                 <h2 style="text-align: center;">INFOS:</h2>
-                <p><span style="color: darkblue; font-weight: bold;">MÁXIMO CARACTERES ID:</span> 16</p>
+                <p><span style="color: darkblue; font-weight: bold;">MÁXIMO CARACTERES ID:</span> 24</p>
                 <p><span style="color: darkblue; font-weight: bold;">MÁXIMO CARACTERES PRODUTOS:</span> 140</p>
                 <p><span style="color: darkblue; font-weight: bold;">TIPO DE ARQUIVOS ACEITOS:</span> .xls, .xlsx</p>
                 <p><span style="color: darkblue; font-weight: bold;">VERSÕES DISPONÍVEIS:</span> Amarelo (PADRÃO)</p>
@@ -107,10 +107,10 @@
 
         // Adicionar um ouvinte de evento para o evento 'input'
         inputField1.addEventListener('input', function (event) {
-            // Verificar se o número de caracteres é maior que 16
-            if (event.target.value.length > 16) {
-                // Se for, definir o valor do input para os primeiros 16 caracteres
-                event.target.value = event.target.value.slice(0, 16);
+            // Verificar se o número de caracteres é maior que 24
+            if (event.target.value.length > 24) {
+                // Se for, definir o valor do input para os primeiros 24 caracteres
+                event.target.value = event.target.value.slice(0, 24);
             }
         });
 
@@ -120,9 +120,9 @@
 
         // Adicionar um ouvinte de evento para o evento 'input'
         inputField2.addEventListener('input', function (event) {
-            // Verificar se o número de caracteres é maior que 16
+            // Verificar se o número de caracteres é maior que 140
             if (event.target.value.length > 140) {
-                // Se for, definir o valor do input para os primeiros 16 caracteres
+                // Se for, definir o valor do input para os primeiros 140 caracteres
                 event.target.value = event.target.value.slice(0, 140);
             }
         });
