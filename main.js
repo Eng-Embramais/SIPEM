@@ -38,12 +38,13 @@ function getData(element) {
                 console.log(datas)
                 datas.qr = qrcodes[c]
                 var product_final = datas.name;
-                var QR = qrcodes[c].innerHTML
+                var QR = qrcodes[c].innerHTML;
+                var qr_viewbox = qrcodes[c].getAttribute('viewBox');
                 var color = window.getComputedStyle(document.body).getPropertyValue('background-color');
-                var source = "f1"
-                var idc = datas.id
+                var source = "f1";
+                var idc = datas.id;
 
-                Integration(QR, product_final, color, source, idc)
+                Integration(QR, product_final, color, source, idc, qr_viewbox)
             }
         } else{
             alert("ERRO: FOI IDENTIFICADO ID QUE NÃO ATENDE AO CRITÉRIO DE MÁXIMO 24 CARACTERES, ANALISE E TENTE NOVAMENTE!");
@@ -118,10 +119,11 @@ function getData(element) {
                             console.log(datas);
                             var product_final = datas.name[c];
                             var QR = datas.qr[c][0].innerHTML;
+                            var qr_viewbox = datas.qr[c][0].getAttribute('viewBox');
                             var color = window.getComputedStyle(document.body).getPropertyValue('background-color');
                             var source = "f2";
-                            var idc = datas.id[c]
-                            Integration(QR, product_final, color, source, idc);
+                            var idc = datas.id[c];
+                            Integration(QR, product_final, color, source, idc, qr_viewbox);
                         } else {
                             alert("ERRO: FOI IDENTIFICADO PRODUTO COM MAIS DE 150 CARACTERES, ANALISE E TENTE NOVAMENTE:" + firstColumnData[c]);
                             console.log("ERRO: FOI IDENTIFICADO PRODUTO COM MAIS DE 150 CARACTERES, ANALISE E TENTE NOVAMENTE:" + firstColumnData[c]);
@@ -212,10 +214,11 @@ function getData(element) {
                             console.log(datas);
                             var product_final = datas.name[c];
                             var QR = datas.qr[c][0].innerHTML;
+                            var qr_viewbox = datas.qr[c][0].getAttribute('viewBox');
                             var color = window.getComputedStyle(document.body).getPropertyValue('background-color');
                             var source = "f3";
-                            var idc = datas.id[c]
-                            Integration(QR, product_final, color, source, idc);
+                            var idc = datas.id[c];
+                            Integration(QR, product_final, color, source, idc, qr_viewbox);
                         } else {
                             alert("ERRO: FOI IDENTIFICADO PRODUTO COM MAIS DE 150 CARACTERES, ANALISE E TENTE NOVAMENTE:" + firstColumnData[c]);
                             console.log("ERRO: FOI IDENTIFICADO PRODUTO COM MAIS DE 150 CARACTERES, ANALISE E TENTE NOVAMENTE:" + firstColumnData[c]);
@@ -264,12 +267,13 @@ function getData(element) {
                 console.log(datas)
                 datas.qr = qrcodes[c]
                 var product_final = datas.name;
-                var QR = qrcodes[c].innerHTML
+                var QR = qrcodes[c].innerHTML;
+                var qr_viewbox = qrcodes[c].getAttribute('viewBox');
                 var color = window.getComputedStyle(document.body).getPropertyValue('background-color');
-                var source = "f4"
-                var idc = datas.id
+                var source = "f4";
+                var idc = datas.id;
 
-                Integration(QR, product_final, color, source, idc)
+                Integration(QR, product_final, color, source, idc, qr_viewbox)
             }
         } else{
             alert("ERRO: FOI IDENTIFICADO ID QUE NÃO ATENDE AO CRITÉRIO DE MÁXIMO 24 CARACTERES, ANALISE E TENTE NOVAMENTE!");
@@ -417,7 +421,7 @@ function DownloadAllAsZip() {
 }
 
 
-function Integration(QR, PRODUCT, color, source, idc) {
+function Integration(QR, PRODUCT, color, source, idc, qr_viewbox) {
     if (color == "rgb(254, 196, 3)") {
         //fundo amarelo
         var svg_final = `<?xml version="1.0" encoding="utf-8"?>
@@ -646,7 +650,7 @@ function Integration(QR, PRODUCT, color, source, idc) {
                 C217.45,582.35,216.16,581.06,216.16,579.49z M216.16,589.7c0-1.56,1.29-2.85,2.85-2.85c1.56,0,2.85,1.29,2.85,2.85
                 c0,1.56-1.29,2.85-2.85,2.85C217.45,592.54,216.16,591.25,216.16,589.7z"/>
         </g>
-        <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" y="300" x="4%">
+        <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" y="320" x="4%">
         <g>
         <!-- Segundo grupo (renderizado por cima) -->
      <text y="320" x="50%" fill="white" font-weight="900" font-size="15px" font-family="Arial" text-anchor="middle">
@@ -660,7 +664,7 @@ function Integration(QR, PRODUCT, color, source, idc) {
 
     </g>
     </svg>
-        <svg x="25" y="230" viewBox="0 0 57 57" width="350" height="380" fill="#000" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" version="1.1">${QR}</svg>
+        <svg x="25" y="230" viewBox="${qr_viewbox}" width="350" height="380" fill="#000" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" version="1.1">${QR}</svg>
         <g>
             <path class="st4" d="M111.54,57.58H74.78c-1.39,0-2.53,1.13-2.53,2.53v51.76c0,1.4,1.13,2.53,2.53,2.53h36.76
                 c1.39,0,2.53-1.13,2.53-2.53v-5.19c0-1.4-1.13-2.53-2.53-2.53H85.88c-1.39,0-2.53-1.13-2.53-2.53v-8.58c0-1.4,1.13-2.53,2.53-2.53
@@ -721,7 +725,7 @@ function Integration(QR, PRODUCT, color, source, idc) {
                 c2.62,0,4.75-2.13,4.75-4.77v-20.02c0-2.63,2.13-4.77,4.75-4.77h19.95C305.4,168.6,307.53,166.47,307.53,163.83z"/>
                 <text x="405" y="250" fill="white" font-weight="900" font-size="17px" font-family="Arial" writing-mode="tb" glyph-orientation-vertical="0">${idc}</text>
         </g>
-        <svg xmlns="http://www.w3.org/2000/svg" id="Camada_1" data-name="Camada 1" viewBox="0 0 170.08 340.16" y="100" width="250px" x="75px">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Camada_1" data-name="Camada 1" viewBox="0 0 170.08 340.16" y="150" width="250px" x="75px">
   <defs>
     <style>.cls-1,.cls-5{fill:none;}.cls-2{fill:#006896;}.cls-3{clip-path:url(#clip-path);}.cls-4{fill:#ffb248;}.cls-5{stroke:#fff;}.cls-5,.cls-9{stroke-miterlimit:10;}.cls-6{isolation:isolate;}.cls-7{fill:#fff;}.cls-8{fill:#f8b04c;}.cls-9{fill:#016997;stroke:#026a98;}</style>
   </defs>
